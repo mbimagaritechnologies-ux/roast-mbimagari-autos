@@ -1,0 +1,5 @@
+Contact: mailto:security@mbimagari.autos
+Expires: 2027-12-31T00:00:00.000Z
+Acknowledgments: https://roast.mbimagari.autos/hall-of-fame
+Preferred-Languages: en, sw
+Canonical: https://roast.mbimagari.autos/.well-known/security.txt
