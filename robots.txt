@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Sitemap: https://roast.mbimagari.autos/sitemap.xml
+
+# AI Crawlers Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
