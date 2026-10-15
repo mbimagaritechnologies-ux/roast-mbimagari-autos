@@ -1,0 +1,452 @@
+[
+  {
+    "id": "toyota-probox-petrol-0",
+    "name": "Toyota Probox",
+    "fuel": "Petrol",
+    "category": "workhorses",
+    "roast": "Probox si gari ni ofisi. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Probox ndio empire. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "workhorses"]
+  },
+  {
+    "id": "toyota-probox-hybrid-petrol-1",
+    "name": "Toyota Probox",
+    "fuel": "Hybrid-Petrol",
+    "category": "workhorses",
+    "roast": "Probox Hybrid bado inabeba mbuzi. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Hybrid Probox mafuta kidogo kazi nyingi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "hybrid-petrol", "workhorses"]
+  },
+  {
+    "id": "toyota-succeed-petrol-2",
+    "name": "Toyota Succeed",
+    "fuel": "Petrol",
+    "category": "workhorses",
+    "roast": "Succeed ni Probox aliyevaa suti. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Succeed yangu ni Probox na heshima. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "workhorses"]
+  },
+  {
+    "id": "toyota-vitz-petrol-3",
+    "name": "Toyota Vitz",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Vitz ni handbag na magurudumu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Vitz yangu inakula mafuta kama paka. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "small"]
+  },
+  {
+    "id": "toyota-vitz-electric-4",
+    "name": "Toyota Vitz",
+    "fuel": "Electric",
+    "category": "small",
+    "roast": "Vitz Electric ndoto ya mama. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Vitz Electric silent but deadly. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "electric", "small"]
+  },
+  {
+    "id": "toyota-demio-petrol-5",
+    "name": "Toyota Demio",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Demio ni Vitz wa Mazdas. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Demio yangu ni ka-Vitz lakini na msimamo. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "small"]
+  },
+  {
+    "id": "toyota-demio-diesel-6",
+    "name": "Toyota Demio",
+    "fuel": "Diesel",
+    "category": "small",
+    "roast": "Demio Diesel inalia kama panya. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Demio Diesel yangu ni ya wajanja. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "diesel", "small"]
+  },
+  {
+    "id": "honda-fit-hybrid-petrol-7",
+    "name": "Honda Fit",
+    "fuel": "Hybrid-Petrol",
+    "category": "small",
+    "roast": "Fit Hybrid battery ni loan. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Fit yangu inapita bila mafuta. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["honda", "hybrid-petrol", "small"]
+  },
+  {
+    "id": "honda-fit-petrol-8",
+    "name": "Honda Fit",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Fit ni gari ya kanisa na gym. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Fit yangu ni ya mama na bado inawaka. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["honda", "petrol", "small"]
+  },
+  {
+    "id": "mazda-axela-petrol-9",
+    "name": "Mazda Axela",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Axela inadhani ni BMW. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Axela yangu ni BMW ya watu wako na akili. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["mazda", "petrol", "small"]
+  },
+  {
+    "id": "mazda-axela-hybrid-petrol-10",
+    "name": "Mazda Axela",
+    "fuel": "Hybrid-Petrol",
+    "category": "small",
+    "roast": "Axela Hybrid inajifanya Tesla. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Axela Hybrid yangu ni Tesla wa Kayole. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["mazda", "hybrid-petrol", "small"]
+  },
+  {
+    "id": "toyota-mark-x-petrol-11",
+    "name": "Toyota Mark X",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Mark X ni gari ya ex ukiwa na pesa. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Mark X yangu ndio reason ex anarudi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "small"]
+  },
+  {
+    "id": "toyota-crown-hybrid-petrol-12",
+    "name": "Toyota Crown",
+    "fuel": "Hybrid-Petrol",
+    "category": "small",
+    "roast": "Crown ni ya wazee na pesa. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Crown yangu ni ya MCA mstaafu. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "hybrid-petrol", "small"]
+  },
+  {
+    "id": "subaru-forester-petrol-13",
+    "name": "Subaru Forester",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Forester ya boys wa rally kwa parking. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Forester yangu inapanda mlima bila kulia. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["subaru", "petrol", "small"]
+  },
+  {
+    "id": "subaru-impreza-petrol-14",
+    "name": "Subaru Impreza",
+    "fuel": "Petrol",
+    "category": "small",
+    "roast": "Impreza ni gari ya kelele tu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Impreza yangu inalia lakini inakimbia. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["subaru", "petrol", "small"]
+  },
+  {
+    "id": "toyota-voxy-petrol-15",
+    "name": "Toyota Voxy",
+    "fuel": "Petrol",
+    "category": "matatu",
+    "roast": "Voxy ni sitting room inatembea. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Voxy yangu ni nyumba ya familia. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "petrol", "matatu"]
+  },
+  {
+    "id": "toyota-voxy-hybrid-petrol-16",
+    "name": "Toyota Voxy",
+    "fuel": "Hybrid-Petrol",
+    "category": "matatu",
+    "roast": "Voxy Hybrid bado ni matatu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Voxy Hybrid familia yote mafuta kidogo. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "hybrid-petrol", "matatu"]
+  },
+  {
+    "id": "toyota-noah-phev-petrol-17",
+    "name": "Toyota Noah",
+    "fuel": "PHEV-Petrol",
+    "category": "matatu",
+    "roast": "Noah PHEV ni matatu ya kanisa na charger. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Noah yangu ni kanisa na office. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "phev-petrol", "matatu"]
+  },
+  {
+    "id": "nissan-serena-petrol-18",
+    "name": "Nissan Serena",
+    "fuel": "Petrol",
+    "category": "matatu",
+    "roast": "Serena ni Voxy wa Nissan. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Serena yangu inabeba wajukuu wote. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["nissan", "petrol", "matatu"]
+  },
+  {
+    "id": "toyota-hiace-diesel-19",
+    "name": "Toyota Hiace",
+    "fuel": "Diesel",
+    "category": "matatu",
+    "roast": "Hiace ndio matatu ya ukweli. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Hiace yangu ndio inabeba Nairobi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "diesel", "matatu"]
+  },
+  {
+    "id": "nissan-caravan-diesel-20",
+    "name": "Nissan Caravan",
+    "fuel": "Diesel",
+    "category": "matatu",
+    "roast": "Caravan ni Hiace aliyechoka. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Caravan yangu bado inavuta. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["nissan", "diesel", "matatu"]
+  },
+  {
+    "id": "yutong-51-seater-diesel-21",
+    "name": "Yutong 51 Seater",
+    "fuel": "Diesel",
+    "category": "buses",
+    "roast": "Yutong ni harusi inatembea. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Yutong yangu ndio village. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["yutong", "diesel", "buses"]
+  },
+  {
+    "id": "yutong-33-seater-diesel-22",
+    "name": "Yutong 33 Seater",
+    "fuel": "Diesel",
+    "category": "buses",
+    "roast": "Yutong 33 ni ya shule na harusi. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Yutong 33 yangu ndio school bus. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["yutong", "diesel", "buses"]
+  },
+  {
+    "id": "isuzu-mv-123-diesel-23",
+    "name": "Isuzu MV 123",
+    "fuel": "Diesel",
+    "category": "buses",
+    "roast": "Isuzu MV ni basi ya zamani lakini bado. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "MV yangu imemaliza shule nyingi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["isuzu", "diesel", "buses"]
+  },
+  {
+    "id": "scania-marcopolo-diesel-24",
+    "name": "Scania Marcopolo",
+    "fuel": "Diesel",
+    "category": "buses",
+    "roast": "Scania Marcopolo ni basi ya tajiri. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Scania Marcopolo yangu ni first class. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["scania", "diesel", "buses"]
+  },
+  {
+    "id": "scania-f360-diesel-25",
+    "name": "Scania F360",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Scania F360 horn moja watu wanaingia mtaro. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Scania yangu inabeba Kenya. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["scania", "diesel", "lorries"]
+  },
+  {
+    "id": "scania-p410-diesel-26",
+    "name": "Scania P410",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Scania P410 ndio mfalme wa barabara. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "P410 yangu ndio king. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["scania", "diesel", "lorries"]
+  },
+  {
+    "id": "howo-sinotruck-diesel-27",
+    "name": "Howo Sinotruck",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Howo inakula diesel kama njovu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Howo yangu ndio inajenga bypass. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["howo", "diesel", "lorries"]
+  },
+  {
+    "id": "howo-tipper-diesel-28",
+    "name": "Howo Tipper",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Howo Tipper ni ya mawe na mchanga. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Tipper yangu ndio ina-jenga flat yako. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["howo", "diesel", "lorries"]
+  },
+  {
+    "id": "isuzu-frr-90-diesel-29",
+    "name": "Isuzu FRR 90",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "FRR 90 ni lorry ya kila mtu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "FRR yangu backbone ya biashara. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["isuzu", "diesel", "lorries"]
+  },
+  {
+    "id": "isuzu-fvr-diesel-30",
+    "name": "Isuzu FVR",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "FVR ni FRR amekula gym. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "FVR yangu ndio heavy duty. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["isuzu", "diesel", "lorries"]
+  },
+  {
+    "id": "mitsubishi-fuso-fighter-diesel-31",
+    "name": "Mitsubishi Fuso Fighter",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Fuso Fighter ndio lorry ya maziwa. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Fuso yangu inabeba maziwa yote. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["mitsubishi", "diesel", "lorries"]
+  },
+  {
+    "id": "mitsubishi-fuso-canter-diesel-32",
+    "name": "Mitsubishi Fuso Canter",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Canter ni kadogo lakini kanabeba. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Canter yangu ni kadogo na roho kubwa. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["mitsubishi", "diesel", "lorries"]
+  },
+  {
+    "id": "toyota-hilux-diesel-33",
+    "name": "Toyota Hilux",
+    "fuel": "Diesel",
+    "category": "lorries",
+    "roast": "Hilux ni lorry inajifanya pickup. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Hilux yangu inaenda shamba na town. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "diesel", "lorries"]
+  },
+  {
+    "id": "toyota-hilux-hybrid-diesel-34",
+    "name": "Toyota Hilux",
+    "fuel": "Hybrid-Diesel",
+    "category": "lorries",
+    "roast": "Hilux Hybrid Diesel ndio ya wajanja. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Hilux Hybrid mafuta kidogo kazi nyingi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "hybrid-diesel", "lorries"]
+  },
+  {
+    "id": "byd-atto-3-electric-35",
+    "name": "BYD Atto 3",
+    "fuel": "Electric",
+    "category": "small",
+    "roast": "BYD Atto 3 unacharge mall kuonyesha pesa. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Atto 3 yangu 400km bila Shell. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["byd", "electric", "small"]
+  },
+  {
+    "id": "byd-seagull-electric-36",
+    "name": "BYD Seagull",
+    "fuel": "Electric",
+    "category": "small",
+    "roast": "Seagull ni gari ya umeme ya bei ya Vitz. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Seagull yangu ni Vitz ya future. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["byd", "electric", "small"]
+  },
+  {
+    "id": "tesla-model-3-electric-37",
+    "name": "Tesla Model 3",
+    "fuel": "Electric",
+    "category": "small",
+    "roast": "Tesla Kenya bado unatafuta charger. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Tesla yangu inapita bila kelele. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["tesla", "electric", "small"]
+  },
+  {
+    "id": "nissan-leaf-electric-38",
+    "name": "Nissan Leaf",
+    "fuel": "Electric",
+    "category": "small",
+    "roast": "Leaf ni umeme wa zamani. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Leaf yangu bado inaenda. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["nissan", "electric", "small"]
+  },
+  {
+    "id": "toyota-prius-hybrid-petrol-39",
+    "name": "Toyota Prius",
+    "fuel": "Hybrid-Petrol",
+    "category": "small",
+    "roast": "Prius ni gari ya watu wa hesabu. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Prius yangu 30km kwa litre. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "hybrid-petrol", "small"]
+  },
+  {
+    "id": "toyota-prius-phev-petrol-40",
+    "name": "Toyota Prius",
+    "fuel": "PHEV-Petrol",
+    "category": "small",
+    "roast": "Prius PHEV ni Prius na cable. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Prius PHEV yangu na stima na mafuta. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["toyota", "phev-petrol", "small"]
+  },
+  {
+    "id": "boxer-bm-150-boda-petrol-41",
+    "name": "Boxer BM 150",
+    "fuel": "Boda Petrol",
+    "category": "boda",
+    "roast": "Boxer president wa boda. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Boxer ndio ATM yangu. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["boxer", "boda petrol", "boda"]
+  },
+  {
+    "id": "boxer-bm-150-boda-electric-42",
+    "name": "Boxer BM 150",
+    "fuel": "Boda Electric",
+    "category": "boda",
+    "roast": "Boxer Electric bado president. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Boxer Electric pesa yote mfukoni. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["boxer", "boda electric", "boda"]
+  },
+  {
+    "id": "tvs-hlx-150-boda-petrol-43",
+    "name": "TVS HLX 150",
+    "fuel": "Boda Petrol",
+    "category": "boda",
+    "roast": "TVS HLX kelele kama generator. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "TVS yangu haizimi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["tvs", "boda petrol", "boda"]
+  },
+  {
+    "id": "tvs-hlx-150-boda-diesel-44",
+    "name": "TVS HLX 150",
+    "fuel": "Boda Diesel",
+    "category": "boda",
+    "roast": "TVS Diesel nadra lakini iko. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "TVS Diesel yangu ni unique. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["tvs", "boda diesel", "boda"]
+  },
+  {
+    "id": "captain-150-boda-petrol-45",
+    "name": "Captain 150",
+    "fuel": "Boda Petrol",
+    "category": "boda",
+    "roast": "Captain boda ya watu wa hasira. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Captain yangu inakimbia kama polisi. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["captain", "boda petrol", "boda"]
+  },
+  {
+    "id": "haojin-150-boda-petrol-46",
+    "name": "Haojin 150",
+    "fuel": "Boda Petrol",
+    "category": "boda",
+    "roast": "Haojin boda ya budget. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Haojin yangu kazi tu. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["haojin", "boda petrol", "boda"]
+  },
+  {
+    "id": "roam-air-boda-electric-47",
+    "name": "Roam Air",
+    "fuel": "Boda Electric",
+    "category": "boda",
+    "roast": "Roam Air charge 4hrs enda 80km. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Roam Air silent killer. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["roam", "boda electric", "boda"]
+  },
+  {
+    "id": "ampersand-electric-boda-electric-48",
+    "name": "Ampersand Electric",
+    "fuel": "Boda Electric",
+    "category": "boda",
+    "roast": "Ampersand boda ya Rwanda imefika KE. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Ampersand yangu ni ya future. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["ampersand", "boda electric", "boda"]
+  },
+  {
+    "id": "honda-ace-125-boda-petrol-49",
+    "name": "Honda Ace 125",
+    "fuel": "Boda Petrol",
+    "category": "boda",
+    "roast": "Honda Ace kadogo lakini kazi. Ukiona hii barabarani unajua dereva ana story za kutosha za TikTok.",
+    "brag": "Ace yangu kazi kama punda. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50.",
+    "tags": ["honda", "boda petrol", "boda"]
+  }
+    ]
