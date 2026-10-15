@@ -1,115 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MBI Admin - Cloudflare</title>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-black text-white p-4">
-<div class="max-w-2xl mx-auto">
-<h1 class="text-2xl font-black">MBI ADMIN</h1>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MBI Admin - Verified Only</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-black text-white p-4"><div class="max-w-2xl mx-auto">
+<h1 class="text-2xl font-black">MBI ADMIN v4 <span class="text-[#FF4D00] text-sm">VERIFIED ONLY</span></h1>
+<p class="text-xs text-white/50 mt-1">Unaongeza tu magari uncommon - watu wajiandikie kwa main site</p>
 
-<!-- TOKEN - INAONEKANA KABLA YA LOGIN -->
 <div class="bg-[#FF4D00] p-3 rounded mt-4">
-<h3 class="font-black text-xs text-black">⚙️ GITHUB TOKEN ()</h3>
+<h3 class="font-black text-xs text-black">⚙️ GITHUB TOKEN</h3>
 <input id="gh_token" type="text" placeholder="ghp_xxxx" class="w-full p-3 rounded bg-white text-black text-sm mt-2 font-mono">
-<div class="grid grid-cols-2 gap-2 mt-2">
-<input id="gh_repo" value="mbimagaritechnologies-ux/roast-mbimagari-autos" class="p-2 rounded bg-white text-black text-xs">
-<input id="gh_branch" value="main" class="p-2 rounded bg-white text-black text-xs">
-</div>
-<button onclick="saveGhConfig()" class="mt-2 bg-black text-white w-full py-2 rounded text-xs font-bold">SAVE TOKEN 🔒</button>
-<p id="gh_status" class="text-xs mt-1 text-black font-bold"></p>
-</div>
+<div class="grid grid-cols-2 gap-2 mt-2"><input id="gh_repo" value="mbimagaritechnologies-ux/roast-mbimagari-autos" class="p-2 rounded bg-white text-black text-xs"><input id="gh_branch" value="main" class="p-2 rounded bg-white text-black text-xs"></div>
+<button onclick="saveGhConfig()" class="mt-2 bg-black text-white w-full py-2 rounded text-xs font-bold">SAVE TOKEN 🔒</button><p id="gh_status" class="text-xs mt-1 text-black font-bold"></p></div>
 
-<!-- LOGIN - INATUMIA CLOUDFLARE ENV VAR -->
-<div id="login" class="mt-4 bg-white/10 p-4 rounded">
-<p class="text-xs text-white/60 mb-2">Password inatoka Cloudflare Env Variable</p>
-<input id="pass" type="password" placeholder="Weka password ya Cloudflare" class="w-full p-3 rounded bg-white text-black">
-<button onclick="login()" class="mt-2 bg-[#FF4D00] w-full p-3 rounded font-bold">INGIA</button>
-<p id="err" class="text-red-400 text-xs mt-2 hidden"></p>
-<p id="loading" class="text-white/60 text-xs mt-2 hidden">Checking Cloudflare...</p>
-</div>
+<div id="login" class="mt-4 bg-white/10 p-4 rounded"><input id="pass" type="password" placeholder="Cloudflare password" class="w-full p-3 rounded bg-white text-black"><button onclick="login()" class="mt-2 bg-[#FF4D00] w-full p-3 rounded font-bold">INGIA</button><p id="err" class="text-red-400 text-xs mt-2 hidden"></p><p id="loading" class="text-white/60 text-xs mt-2 hidden">Checking...</p></div>
 
 <div id="panel" class="hidden mt-4 space-y-3">
-<input id="name" placeholder="Jina ya gari" class="w-full p-3 rounded bg-white text-black font-bold">
+<div class="bg-white/5 p-3 rounded text-xs"><b>Maelekezo:</b> Hapa unaongeza tu magari za maana kama Isuzu FVR, Scania Trailer, Yutong, CNG Bus - vitu watu hawawezi jua. Probox, Vitz, Succeed waachie watu wajiandikie kwa main site.</div>
+<input id="name" placeholder="Jina uncommon (e.g. Isuzu FVR, Yutong Coach)" class="w-full p-3 rounded bg-white text-black font-bold">
 <div class="grid grid-cols-2 gap-2">
-<select id="fuel" class="p-3 rounded bg-white text-black text-sm"><option>Petrol</option><option>Diesel</option><option>Electric</option><option>Hybrid-Petrol</option><option>Boda Petrol</option><option>Boda Electric</option></select>
-<select id="cat" class="p-3 rounded bg-white text-black text-sm"><option value="small">Small Cars</option><option value="workhorses">Workhorses</option><option value="matatu">Matatu/PSV</option><option value="scania">Scania</option><option value="man">MAN</option><option value="boda">Boda Boda</option></select>
+<select id="fuel" class="p-3 rounded bg-white text-black text-sm font-bold">
+<option>Petrol</option><option>Diesel</option><option>Hybrid-Petrol</option><option>Hybrid-Diesel</option><option>PHEV-Petrol</option><option>PHEV-Diesel</option><option>CNG</option><option>Electric</option><option>Boda Petrol</option><option>Boda Electric</option>
+</select>
+<select id="cat" class="p-3 rounded bg-white text-black text-sm font-bold">
+<option value="small">Kadogo - Town Cars</option>
+<option value="workhorses">Kazi - Pickup & Hiace</option>
+<option value="matatu">Matatu / Manyanga</option>
+<option value="minibus">Shuttle / Minibus (11-26)</option>
+<option value="bus">Basi Kubwa / Coach</option>
+<option value="lorry">Lori / Mizigo (Canter, FVR)</option>
+<option value="trailer">Trailer / Semi</option>
+<option value="boda">Nduthi / Boda</option>
+</select>
 </div>
-<textarea id="roast1" placeholder="Roast 1" class="w-full p-2 rounded bg-white text-black h-16 text-sm"></textarea>
+<textarea id="roast1" placeholder="Roast 1 - kali zaidi (experience yako)" class="w-full p-2 rounded bg-white text-black h-16 text-sm"></textarea>
 <textarea id="roast2" placeholder="Roast 2" class="w-full p-2 rounded bg-white text-black h-14 text-sm"></textarea>
 <textarea id="roast3" placeholder="Roast 3" class="w-full p-2 rounded bg-white text-black h-14 text-sm"></textarea>
 <textarea id="roast4" placeholder="Roast 4" class="w-full p-2 rounded bg-white text-black h-14 text-sm"></textarea>
 <textarea id="roast5" placeholder="Roast 5" class="w-full p-2 rounded bg-white text-black h-14 text-sm"></textarea>
-<textarea id="brag" placeholder="Brag Card" class="w-full p-3 rounded bg-white text-black h-20 text-sm"></textarea>
-<button onclick="generateAndPush()" id="btnPush" class="bg-[#FF4D00] w-full p-4 rounded font-black">🚀 SAVE & PUSH AUTO</button>
-<div id="output" class="hidden mt-4 bg-white/10 p-3 rounded"><p id="outTitle" class="font-bold text-sm"></p><pre id="code" class="text-xs overflow-auto max-h-48 whitespace-pre-wrap mt-2"></pre><p id="pushStatus" class="text-sm mt-2"></p></div>
-</div>
-</div>
-
+<textarea id="brag" placeholder="Brag Card - kujisifu (Verified)" class="w-full p-3 rounded bg-white text-black h-20 text-sm"></textarea>
+<button onclick="generateAndPush()" id="btnPush" class="bg-[#FF4D00] w-full p-4 rounded font-black text-lg">🚀 SAVE VERIFIED & PUSH</button>
+<div id="output" class="hidden mt-4 bg-white/10 p-3 rounded"><p id="outTitle" class="font-bold text-sm"></p><pre id="code" class="text-xs overflow-auto max-h-48 whitespace-pre-wrap mt-2"></pre><p id="pushStatus" class="text-sm mt-2"></p></div></div></div>
 <script>
-const DEFAULT_GH_TOKEN = "PASTE_TOKEN_HAPA_KAMA_UNATAKA"; // Weka token yako hapa pia
-
-document.getElementById('gh_token').value = localStorage.getItem('mbi_gh_token') || (DEFAULT_GH_TOKEN.includes('PASTE')?'':DEFAULT_GH_TOKEN);
-document.getElementById('gh_repo').value = localStorage.getItem('mbi_gh_repo')||'mbimagaritechnologies-ux/roast-mbimagari-autos';
-document.getElementById('gh_branch').value = localStorage.getItem('mbi_gh_branch')||'main';
+document.getElementById('gh_token').value=localStorage.getItem('mbi_gh_token')||'';
+document.getElementById('gh_repo').value=localStorage.getItem('mbi_gh_repo')||'mbimagaritechnologies-ux/roast-mbimagari-autos';
+document.getElementById('gh_branch').value=localStorage.getItem('mbi_gh_branch')||'main';
 if(localStorage.getItem('mbi_gh_token')) document.getElementById('gh_status').textContent='✓ saved';
-
-function saveGhConfig(){
-  const t=document.getElementById('gh_token').value.trim(); if(!t){alert('Weka token');return;}
-  localStorage.setItem('mbi_gh_token',t);
-  localStorage.setItem('mbi_gh_repo',document.getElementById('gh_repo').value.trim());
-  localStorage.setItem('mbi_gh_branch',document.getElementById('gh_branch').value.trim());
-  document.getElementById('gh_status').textContent='✓ SAVED! Sasa ingia';
-}
-
-async function login(){
-  const pass=document.getElementById('pass').value.trim(); if(!pass) return;
-  document.getElementById('loading').classList.remove('hidden'); document.getElementById('err').classList.add('hidden');
-  try{
-    const res=await fetch('/api/check-admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pass})});
-    const data=await res.json();
-    if(data.ok){
-      document.getElementById('login').classList.add('hidden'); document.getElementById('panel').classList.remove('hidden');
-      localStorage.setItem('mbi_admin_token',data.token||'ok');
-    }else{
-      document.getElementById('err').textContent='Wrong password - angalia Cloudflare Env'; document.getElementById('err').classList.remove('hidden');
-    }
-  }catch(e){
-    document.getElementById('err').textContent='API haijapatikana - jaribu password ya dharura: mbi2024';
-    document.getElementById('err').classList.remove('hidden');
-    if(pass==='mbi2024'){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden');}
-  }
-  document.getElementById('loading').classList.add('hidden');
-}
-const token=localStorage.getItem('mbi_admin_token');
-if(token){fetch('/api/check-admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token})}).then(r=>r.json()).then(d=>{if(d.ok){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden');}}).catch(()=>{});}
-
-function buildObj(){
-  const n=document.getElementById('name').value.trim(); const f=document.getElementById('fuel').value; const c=document.getElementById('cat').value;
-  const r=[1,2,3,4,5].map(i=>document.getElementById('roast'+i).value.trim()).filter(x=>x.length>3);
-  const b=document.getElementById('brag').value.trim();
-  if(!n||r.length===0||!b){alert('Jaza jina, roast1 na brag');return null;}
-  const id=n.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-'+f.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-'+Date.now();
-  return {id,name:n,fuel:f,category:c,roast:r[0],roasts:r,brag:b,bragRoasts:[b],tags:[n.split(' ')[0].toLowerCase(),f.toLowerCase(),c]};
-}
-async function generateAndPush(){
-  const obj=buildObj(); if(!obj) return;
-  const ghToken=document.getElementById('gh_token').value.trim()||localStorage.getItem('mbi_gh_token'); const ghRepo=document.getElementById('gh_repo').value.trim(); const ghBranch=document.getElementById('gh_branch').value.trim()||'main';
-  if(!ghToken){alert('Weka token juu kwanza');return;}
-  const btn=document.getElementById('btnPush'); btn.textContent='⏳ Inapush...'; btn.disabled=true;
-  try{
-    const getRes=await fetch(`https://api.github.com/repos/${ghRepo}/contents/cars.json?ref=${ghBranch}`,{headers:{'Authorization':`Bearer ${ghToken}`,'Accept':'application/vnd.github.v3+json'}});
-    if(!getRes.ok) throw new Error(await getRes.text());
-    const fileData=await getRes.json(); const contentStr=atob(fileData.content.replace(/\n/g,'')); let cars=JSON.parse(contentStr); cars.push(obj);
-    const newContent=btoa(unescape(encodeURIComponent(JSON.stringify(cars,null,2))));
-    const putRes=await fetch(`https://api.github.com/repos/${ghRepo}/contents/cars.json`,{method:'PUT',headers:{'Authorization':`Bearer ${ghToken}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify({message:`Add: ${obj.name}`,content:newContent,sha:fileData.sha,branch:ghBranch})});
-    if(!putRes.ok) throw new Error(await putRes.text());
-    document.getElementById('outTitle').textContent='✅ Imefanikiwa!'; document.getElementById('code').textContent=JSON.stringify(obj,null,2); document.getElementById('pushStatus').innerHTML=`<span class="text-green-400 font-bold">Pushed! ${obj.name}</span>`; document.getElementById('output').classList.remove('hidden');
-  }catch(err){document.getElementById('outTitle').textContent='❌ Error';document.getElementById('code').textContent=err.message;document.getElementById('output').classList.remove('hidden');}
-  btn.textContent='🚀 SAVE & PUSH AUTO'; btn.disabled=false;
-}
-</script>
-</body>
-  </html>
+function saveGhConfig(){const t=document.getElementById('gh_token').value.trim();if(!t){alert('Weka token');return;}localStorage.setItem('mbi_gh_token',t);localStorage.setItem('mbi_gh_repo',document.getElementById('gh_repo').value.trim());localStorage.setItem('mbi_gh_branch',document.getElementById('gh_branch').value.trim());document.getElementById('gh_status').textContent='✓ SAVED!';}
+async function login(){const pass=document.getElementById('pass').value.trim();if(!pass) return;document.getElementById('loading').classList.remove('hidden');document.getElementById('err').classList.add('hidden');try{const res=await fetch('/api/check-admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pass})});const data=await res.json();if(data.ok){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden');localStorage.setItem('mbi_admin_token',data.token||'ok');}else{document.getElementById('err').textContent='Wrong password';document.getElementById('err').classList.remove('hidden');}}catch(e){if(pass==='mbi2024'){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden');}else{document.getElementById('err').textContent='API error, jaribu mbi2024';document.getElementById('err').classList.remove('hidden');}}document.getElementById('loading').classList.add('hidden');}
+const token=localStorage.getItem('mbi_admin_token');if(token){fetch('/api/check-admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token})}).then(r=>r.json()).then(d=>{if(d.ok){document.getElementById('login').classList.add('hidden');document.getElementById('panel').classList.remove('hidden');}}).catch(()=>{});}
+function buildObj(){const n=document.getElementById('name').value.trim();const f=document.getElementById('fuel').value;const c=document.getElementById('cat').value;const r=[1,2,3,4,5].map(i=>document.getElementById('roast'+i).value.trim()).filter(x=>x.length>3);const b=document.getElementById('brag').value.trim();if(!n||r.length===0||!b){alert('Jaza jina, roast1 na brag');return null;}const id=n.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-'+f.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-'+Date.now();return {id,name:n,fuel:f,category:c,roast:r[0],roasts:r,brag:b,bragRoasts:[b],tags:[n.split(' ')[0].toLowerCase(),f.toLowerCase(),c], verified:true};}
+async function generateAndPush(){const obj=buildObj();if(!obj) return;const ghToken=document.getElementById('gh_token').value.trim()||localStorage.getItem('mbi_gh_token');const ghRepo=document.getElementById('gh_repo').value.trim();const ghBranch=document.getElementById('gh_branch').value.trim()||'main';if(!ghToken){alert('Weka token juu');return;}const btn=document.getElementById('btnPush');btn.textContent='⏳ Inapush...';btn.disabled=true;try{const getRes=await fetch(`https://api.github.com/repos/${ghRepo}/contents/cars.json?ref=${ghBranch}`,{headers:{'Authorization':`Bearer ${ghToken}`,'Accept':'application/vnd.github.v3+json'}});if(!getRes.ok) throw new Error(await getRes.text());const fileData=await getRes.json();const contentStr=atob(fileData.content.replace(/\n/g,''));let cars;try{cars=JSON.parse(contentStr);}catch(jErr){throw new Error('cars.json bado na error: '+jErr.message);}cars.push(obj);const newContent=btoa(unescape(encodeURIComponent(JSON.stringify(cars,null,2))));const putRes=await fetch(`https://api.github.com/repos/${ghRepo}/contents/cars.json`,{method:'PUT',headers:{'Authorization':`Bearer ${ghToken}`,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'},body:JSON.stringify({message:`Add Verified: ${obj.name}`,content:newContent,sha:fileData.sha,branch:ghBranch})});if(!putRes.ok) throw new Error(await putRes.text());document.getElementById('outTitle').textContent='✅ VERIFIED Imefanikiwa!';document.getElementById('code').textContent=JSON.stringify(obj,null,2);document.getElementById('pushStatus').innerHTML=`<span class="text-green-400 font-bold">Pushed! ${obj.name} (${obj.category}) ✅</span>`;document.getElementById('output').classList.remove('hidden');}catch(err){document.getElementById('outTitle').textContent='❌ Error';document.getElementById('code').textContent=err.message;document.getElementById('output').classList.remove('hidden');}btn.textContent='🚀 SAVE VERIFIED & PUSH';btn.disabled=false;}
+</script></body></html>
