@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBI Roast - Choma Gari 🔥</title>
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#FF4D00">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:#000;color:#fff;padding:12px;max-width:600px;margin:auto;}
+.header{text-align:center;padding:18px 0 10px;}
+.header h1{font-size:32px;color:#FF4D00;}
+.header p{color:#999;margin-top:4px;}
+.searchWrap{position:sticky;top:8px;z-index:20;background:#000;padding:8px 0 6px;}
+.searchRow{display:flex;gap:8px;}
+.searchRow input{flex:1;padding:16px 14px;border-radius:14px;border:2px solid #FF4D00;background:#111;color:#fff;font-size:17px;outline:none;}
+.iconBtn{width:52px;height:52px;border-radius:14px;border:2px solid #333;background:#111;color:#fff;font-size:22px;cursor:pointer;}
+.filters{display:flex;gap:7px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:none;}
+.chip{white-space:nowrap;padding:8px 14px;border-radius:20px;border:1px solid #333;background:#111;color:#fff;font-size:12.5px;cursor:pointer;font-weight:700;}
+.chip.active,.chip.fuel{background:#FF4D00;border-color:#FF4D00;color:#fff;}
+#fuelChips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 6px;}
+#results{display:grid;gap:14px;margin-top:14px;padding-bottom:100px;}
+.card{border:1px solid #222;background:linear-gradient(135deg,#141414,#1c1c1c);padding:16px;border-radius:18px;}
+.card h3{color:#FF4D00;font-size:19px;display:flex;justify-content:space-between;align-items:center;}
+.badge{font-size:11px;background:#222;color:#aaa;padding:4px 8px;border-radius:10px;}
+.card p{margin:11px 0 0;line-height:1.55;font-size:15.5px;color:#eee;}
+.btns{display:flex;gap:8px;margin-top:14px;}
+.btn{padding:11px 10px;border-radius:11px;border:none;font-weight:800;cursor:pointer;font-size:14px;flex:1;}
+.btn-roast{background:#FF4D00;color:#fff;}
+.btn-brag{background:#fff;color:#000;}
+.btn-share{background:#111;color:#fff;border:1px solid #333;flex:0.6;}
+.createBox{background:#111;border:2px dashed #FF4D00;border-radius:18px;padding:16px;text-align:center;}
+.createBox h3{color:#FF4D00;}
+.createBox input,.createBox select{width:100%;padding:14px;border-radius:12px;border:1px solid #333;background:#000;color:#fff;margin-top:8px;font-size:15px;}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);display:none;justify-content:center;align-items:center;padding:14px;z-index:99;}
+.modalContent{background:#111;border:1px solid #222;border-radius:18px;padding:14px;max-width:420px;width:100%;text-align:center;}
+#listening{font-size:13px;color:#FF4D00;text-align:center;margin-top:6px;display:none;}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>🔥 MBI ROAST</h1>
+<p>Jicho 50 KES upate Brag Card ya kuchoma - Roast ni FREE</p>
+</div>
+<div class="searchWrap">
+<div class="searchRow">
+<input id="searchInput" onkeyup="searchCars()" placeholder="Andika gari yako: Succeed, Probox yangu...">
+<button class="iconBtn" onclick="startVoice()">🎤</button>
+</div>
+<div id="listening">🎤 Nasikiliza...</div>
+<div class="filters" id="filterBar">
+<button class="chip active" onclick="filterType('all',this)">Zote</button>
+<button class="chip" onclick="filterType('small',this)">Kadogo</button>
+<button class="chip" onclick="filterType('workhorses',this)">Kazi</button>
+<button class="chip" onclick="filterType('matatu',this)">Manyanga</button>
+<button class="chip" onclick="filterType('minibus',this)">Shuttle</button>
+<button class="chip" onclick="filterType('bus',this)">Basi</button>
+<button class="chip" onclick="filterType('lorry',this)">Lori</button>
+<button class="chip" onclick="filterType('trailer',this)">Trailer</button>
+<button class="chip" onclick="filterType('boda',this)">Nduthi</button>
+</div>
+<div id="fuelChips"></div>
+</div>
+
+<div id="results">Loading magari 50+...</div>
+
+<div class="modal" id="bragModal"><div class="modalContent">
+<canvas id="bragCanvas" width="1080" height="1350" style="display:none;"></canvas>
+<img id="bragImage" style="width:100%;border-radius:14px;border:1px solid #222;">
+<div style="display:flex;gap:8px;margin-top:12px;">
+<button class="btn btn-roast" onclick="downloadBrag()" style="flex:1;">Download 📥</button>
+<button class="btn btn-brag" onclick="shareBrag()" style="flex:1;">Share 🔗</button>
+</div>
+<button class="btn" style="background:#222;color:#fff;width:100%;margin-top:8px;" onclick="closeModal('bragModal')">Funga</button>
+</div></div>
+
+<div class="modal" id="payModal"><div class="modalContent">
+<h3 style="color:#FF4D00;font-size:22px;">🔥 Unlock Brag Card</h3>
+<p style="margin:12px 0;color:#ccc;">Lipa <b>KES 50</b> upakue brag card ya <span id="payCarName">gari yako</span></p>
+<button class="btn btn-roast" style="width:100%;padding:14px;font-size:16px;" onclick="payNow()">Lipa 50 KES</button>
+<button class="btn" style="background:#222;color:#fff;width:100%;margin-top:8px;" onclick="closeModal('payModal')">Sina pesa</button>
+</div></div>
+
+<script>
+const PAYSTACK_KEY = 'pk_live_d8d08c19442cc7d6016a54aec79a8e5ba2aa048a';
+let allCars = []; let filteredCars = []; let currentFilter='all'; let currentFuel='all';
+let pendingBragId=null; let roastPointer={};
+
+async function loadCars(){
+  try{
+    const res=await fetch('./cars.json?v='+Date.now());
+    const data=await res.json();
+    allCars=Array.isArray(data)?data:data.cars||[];
+    allCars=allCars.map(c=>c.roasts?c:c.roast?{...c,roasts:[c.roast]}:c);
+    showCars(allCars);
+  }catch(e){ document.getElementById('results').innerHTML='❌ cars.json error: '+e.message; }
+}
+function getCarId(car){ return car.id || (car.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+function isPaid(car){ return!!localStorage.getItem('mbi_paid_'+getCarId(car)); }
+
+// ===== AUTO ROAST GENERATOR - WATU WAJIANDIKIE =====
+function generateCustomRoasts(name, cat, fuel){
+  const n=name; const f=fuel.toLowerCase(); const c=cat;
+  const catMap={small:'kadogo',workhorses:'gari ya kazi',matatu:'manyanga',minibus:'shuttle',bus:'basi kubwa',lorry:'lori',trailer:'trailer',boda:'nduthi'};
+  const catName=catMap[c]||'gari';
+  const templates=[
+    `${n} ni ${catName} inajifanya Range. Ukiona hii Nakuru unajua ni stress na mafuta.`,
+    `${n} ${fuel} - ukiiona kwa jam dereva ana playlist ya mugithi na bado anaamua maisha.`,
+    `${n} hii ndio gari ukiipark kwa estate watoto wanaichezea kama toy na bado inawasha.`,
+    `${n} unaeza i-troll lakini ${f.includes('diesel')?'mafuta yake ndio inakulipia rent':'haiwashi rent'} sio yako.`,
+    `${n} ${fuel} - inakula barabara kama chapati kimya kimya lakini inafika. Bro, hii ndio definition ya ${catName}.`
+  ];
+  if(c==='boda') return [`${n} ndio nduthi ya mtaa. Ukiona hii unajua rider ana deni ya loan.`,`${n} ${fuel} - inabeba watu kama basi lakini kwa miguu mbili.`,`Brag: ${n} yangu inalipa bills. Wewe una show, mimi nina kazi.`];
+  if(c==='lorry'||c==='trailer') return templates.map(t=>t.replace('kadogo','heavy duty'));
+  return templates;
+}
+function generateCustomBrag(name, cat, fuel){
+  return `${name} yangu ndio ${cat}. Wewe una gari ya show, mimi nina gari ya kazi. Roast yako ni bure, brag yangu ni Ksh 50. ${fuel} power!`;
+}
+
+function showCars(list){
+  filteredCars=list;
+  const box=document.getElementById('results');
+  const q=document.getElementById('searchInput').value.trim();
+
+  if(!list.length && q.length>2){
+    box.innerHTML=`
+    <div class="createBox">
+      <h3>😎 Gari "${q}" haipo kwenye list</h3>
+      <p style="color:#aaa;font-size:13px;margin:8px 0;">Tengeneza roast yako mwenyewe - FREE</p>
+      <input id="customName" value="${q}" placeholder="Jina ya gari">
+      <div style="display:flex;gap:8px;">
+        <select id="customCat">
+          <option value="small">Kadogo - Town Cars</option>
+          <option value="workhorses">Kazi - Pickup</option>
+          <option value="matatu">Matatu / Manyanga</option>
+          <option value="minibus">Shuttle / Minibus</option>
+          <option value="bus">Basi Kubwa</option>
+          <option value="lorry">Lori / Mizigo</option>
+          <option value="trailer">Trailer / Semi</option>
+          <option value="boda">Nduthi / Boda</option>
+        </select>
+        <select id="customFuel">
+          <option>Petrol</option><option>Diesel</option><option>Hybrid-Petrol</option><option>Hybrid-Diesel</option><option>PHEV-Petrol</option><option>PHEV-Diesel</option><option>CNG</option><option>Electric</option><option>Boda Petrol</option><option>Boda Electric</option>
+        </select>
+      </div>
+      <button class="btn btn-roast" style="width:100%;margin-top:10px;padding:14px;" onclick="createCustomCar()">TENGENEZA ROAST YANGU 🔥</button>
+    </div>`;
+    return;
+  }
+  if(!list.length){ box.innerHTML=`<p style="text-align:center;color:#666;margin-top:40px;">Hakuna "${q}" - andika jina lingine</p>`; return; }
+
+  box.innerHTML=list.map(c=>{
+    const model=c.model||c.name||'Gari'; const fuel=c.fuel||'Petrol'; const cat=c.category||'';
+    const carId=getCarId(c); if(roastPointer[carId]===undefined) roastPointer[carId]=0;
+    const roasts=c.roasts||[c.roast||'Hii gari noma!']; const roast=roasts[roastPointer[carId]%roasts.length];
+    const paid=isPaid(c);
+    const verified=c.id &&!c.id.startsWith('custom-')? '✅' : '👤';
+    return `<div class="card">
+      <h3>${model.toUpperCase()} <span class="badge">${verified} ${fuel} • ${cat} ${paid?'• PAID':''}</span></h3>
+      <p id="roast-${carId}">${roast}</p>
+      <div class="btns">
+        <button class="btn btn-roast" onclick="nextRoast('${carId}')">Choma Tena 🔥 (${roastPointer[carId]+1}/${roasts.length})</button>
+        <button class="btn btn-brag" onclick="makeBragById('${carId}')">${paid?'Brag ✨':'Brag 50🔒'}</button>
+        <button class="btn btn-share" onclick="shareTextById('${carId}')">Share</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function createCustomCar(){
+  const name=document.getElementById('customName').value.trim();
+  const cat=document.getElementById('customCat').value;
+  const fuel=document.getElementById('customFuel').value;
+  if(!name) return alert('Weka jina');
+  const roasts=generateCustomRoasts(name,cat,fuel);
+  const brag=generateCustomBrag(name,cat,fuel);
+  const custom={id:'custom-'+Date.now(), name, fuel, category:cat, roast:roasts[0], roasts, brag, bragRoasts:[brag], tags:[name.toLowerCase(),fuel.toLowerCase(),cat]};
+  allCars.unshift(custom);
+  document.getElementById('searchInput').value=name;
+  searchCars();
+  setTimeout(()=>{ window.scrollTo(0,0); },100);
+}
+
+function searchCars(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  let filtered=[...allCars];
+  if(currentFilter!=='all') filtered=filtered.filter(c=>(c.category||'').toLowerCase()===currentFilter);
+  if(currentFuel!=='all') filtered=filtered.filter(c=>(c.fuel||'').toLowerCase()===currentFuel.toLowerCase());
+  if(q) filtered=filtered.filter(c=>{
+    const hay=((c.model||c.name||'')+' '+(c.category||'')+' '+(c.tags||[]).join(' ')).toLowerCase();
+    const roastHay=(c.roast||'').toLowerCase()+' '+(c.roasts||[]).join(' ').toLowerCase();
+    return hay.includes(q)||roastHay.includes(q)||(c.fuel||'').toLowerCase()===q;
+  });
+  const fuelBox=document.getElementById('fuelChips');
+  if(q && filtered.length>0){
+    const fuels=[...new Set(filtered.map(c=>c.fuel).filter(Boolean))];
+    fuelBox.innerHTML=fuels.length>1?fuels.map(f=>`<button class="chip fuel ${currentFuel===f?'active':''}" onclick="setFuel('${f}')">${f}</button>`).join('')+`<button class="chip" onclick="setFuel('all')">Clear ✕</button>`:'';
+  } else if(!q) fuelBox.innerHTML='';
+  showCars(filtered);
+}
+function filterType(type, btn){
+  currentFilter=type;
+  document.querySelectorAll('#filterBar.chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  searchCars();
+}
+function setFuel(f){ currentFuel=f; searchCars(); }
+function nextRoast(carId){
+  const car=filteredCars.find(c=>getCarId(c)===carId)||allCars.find(c=>getCarId(c)===carId);
+  if(!car) return;
+  const roasts=car.roasts||[car.roast];
+  roastPointer[carId]=(roastPointer[carId]+1)%roasts.length;
+  const r=roasts[roastPointer[carId]];
+  const el=document.getElementById('roast-'+carId); if(el) el.innerText=r;
+  showCars(filteredCars); setTimeout(()=>{ const el2=document.getElementById('roast-'+carId); if(el2) el2.innerText=r; },20);
+}
+function getCarById(id){ return filteredCars.find(c=>getCarId(c)===id)||allCars.find(c=>getCarId(c)===id); }
+function shareTextById(carId){
+  const car=getCarById(carId); const roast=document.getElementById('roast-'+carId).innerText;
+  const text=`🔥 ROAST YA ${(car.model||car.name).toUpperCase()} (${car.fuel||''}) 🔥\n\n${roast}\n\nChoma yako: https://roast.mbimagari.autos`;
+  if(navigator.share) navigator.share({title:'MBI Roast',text}); else navigator.clipboard.writeText(text).then(()=>alert('Copied!'));
+}
+function makeBragById(carId){
+  pendingBragId=carId; const car=getCarById(carId);
+  if(!isPaid(car)){ document.getElementById('payCarName').innerText=(car.model||car.name||'gari yako').toUpperCase(); document.getElementById('payModal').style.display='flex'; return; }
+  generateCardById(carId);
+}
+function payNow(){
+  const car=getCarById(pendingBragId); const carId=getCarId(car);
+  const handler=PaystackPop.setup({
+    key:PAYSTACK_KEY, email:'roast@mbimagari.autos', amount:5000, currency:'KES',
+    ref:'MBI-'+Date.now()+'-'+carId,
+    callback:function(res){ localStorage.setItem('mbi_paid_'+carId,res.reference); closeModal('payModal'); alert('✅ Malipo! '+res.reference); generateCardById(carId); searchCars(); },
+    onClose:function(){ alert('Umefunga malipo'); }
+  }); handler.openIframe();
+}
+function generateCardById(carId){
+  const car=getCarById(carId); const roast=document.getElementById('roast-'+carId).innerText;
+  const model=(car.model||car.name||'GARI').toUpperCase(); const fuel=car.fuel||'';
+  const canvas=document.getElementById('bragCanvas'); const ctx=canvas.getContext('2d');
+  const grad=ctx.createLinearGradient(0,0,0,1350); grad.addColorStop(0,'#1a1a1a'); grad.addColorStop(1,'#000'); ctx.fillStyle=grad; ctx.fillRect(0,0,1080,1350);
+  ctx.fillStyle='#FF4D00'; ctx.fillRect(0,0,1080,18);
+  ctx.fillStyle='#141414'; ctx.strokeStyle='#2a2a2a'; function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath(); ctx.fill(); ctx.stroke(); }
+  roundRect(40,60,1000,1220,24);
+  ctx.fillStyle='#FF4D00'; ctx.font='900 48px system-ui'; ctx.fillText('🔥 MBI ROAST',80,150);
+  ctx.fillStyle='#fff'; ctx.font='800 62px system-ui'; ctx.fillText(model,80,240);
+  ctx.fillStyle='#FF4D00'; ctx.font='600 28px system-ui'; ctx.fillText(fuel.toUpperCase()+' • '+(car.category||'ROAST'),80,285);
+  ctx.fillStyle='#f0f0f0'; ctx.font='32px system-ui';
+  const words=roast.split(' '); let line=''; let y=360;
+  for(let n=0;n<words.length;n++){ let test=line+words[n]+' '; if(ctx.measureText(test).width>920 && n>0){ ctx.fillText(line,80,y); line=words[n]+' '; y+=48; } else line=test; } ctx.fillText(line,80,y);
+  ctx.fillStyle='#666'; ctx.font='24px system-ui'; ctx.fillText('roast.mbimagari.autos • KES 50 PAID',80,1240);
+  document.getElementById('bragImage').src=canvas.toDataURL('image/png');
+  document.getElementById('bragModal').style.display='flex';
+}
+function downloadBrag(){ const a=document.createElement('a'); a.download='MBI-Roast-'+Date.now()+'.png'; a.href=document.getElementById('bragImage').src; a.click(); }
+async function shareBrag(){ const img=document.getElementById('bragImage').src; try{ const blob=await (await fetch(img)).blob(); const file=new File([blob],'roast.png',{type:'image/png'}); if(navigator.canShare && navigator.canShare({files:[file]})) await navigator.share({files:[file],title:'MBI Roast'}); else throw 'no'; }catch(e){ downloadBrag(); } }
+function closeModal(id){ document.getElementById(id).style.display='none'; }
+function startVoice(){
+  const Speech=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Speech){ alert('Tumia Chrome Android'); return; }
+  const rec=new Speech(); rec.lang='sw-KE'; document.getElementById('listening').style.display='block'; rec.start();
+  rec.onresult=(e)=>{ document.getElementById('searchInput').value=e.results[0][0].transcript; document.getElementById('listening').style.display='none'; searchCars(); };
+  rec.onend=()=>{ document.getElementById('listening').style.display='none'; };
+}
+loadCars();
+</script>
+</body>
+  </html>
