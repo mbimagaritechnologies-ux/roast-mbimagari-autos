@@ -1,0 +1,18 @@
+# MBI Magari - Roast Mbimagari Autos
+> Site ya kuchoma magari Kenya kwa jokes. Probox, Vitz, Boda Boda, Lorry, Matatu, Buses, Electric, Hybrid, Boda Electric.
+
+## Roast Categories
+- Small Cars: Vitz, Demio, Fit, Axela, Mark X, Crown, Subaru, BYD, Tesla
+- Workhorses: Probox, Succeed
+- Matatu/PSV: Voxy, Noah, Serena, Hiace, Caravan
+- Buses: Yutong, Isuzu, Scania Marcopolo
+- Lorries: Scania F360/P410, Howo, Isuzu FRR/FVR, Fuso Fighter/Canter, Hilux
+- Boda: Boxer, TVS, Captain, Haojin, Roam Air, Ampersand, Honda Ace
+
+## Fuel Types
+Petrol, Diesel, Electric, Hybrid-Petrol, Hybrid-Diesel, PHEV-Petrol, Boda Petrol, Boda Electric, Boda Diesel, CNG
+
+## How it works
+Search gari > Roast > Brag Card > Share TikTok
+
+Site: https://roast.mbimagari.autos
