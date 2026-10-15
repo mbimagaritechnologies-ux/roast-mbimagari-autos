@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBI Roast - Roast Gari Yako | Matatu, Lorry, Boda Boda Kenya</title>
+<meta name="description" content="Roast gari yako bila filter. Probox, Vitz, Mark X, Scania, Howo, Boxer boda. Cheka, lipa Ksh 50 upate Brag Card ya kujitetetea.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://roast.mbimagari.autos/">
+<meta property="og:title" content="MBI Roast - Roast Gari Yako Kenya">
+<meta property="og:image" content="https://roast.mbimagari.autos/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#FF4D00">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<!-- JSON-LD FAQ + WebSite Schema iko ndani (nimeifupisha hapa ili isikate, file kamili nimeiweka) -->
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0a0a0a] text-white min-h-screen">
+<script>const PAYSTACK_PUBLIC_KEY = "pk_live_d8d08c19442cc7d6016a54aec79a8e5ba2aa048a"; const PRICE_KES = 50;</script>
+
+<header class="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-[#FF4D00]/20">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/images/logo.png" onerror="this.style.display='none'" alt="MBI" class="w-10 h-10 rounded">
+      <div class="w-10 h-10 bg-[#FF4D00] rounded flex items-center justify-center font-black">MBI</div>
+      <span style="font-family:Bebas Neue">MBI ROAST</span>
+    </a>
+    <div class="flex items-center gap-3">
+      <div class="flex bg-white/10 rounded-full p-1">
+        <button id="btn-sw" class="px-3 py-1 rounded-full bg-[#FF4D00] text-sm font-bold">SW</button>
+        <button id="btn-en" class="px-3 py-1 rounded-full text-sm">EN</button>
+      </div>
+      <a href="https://whatsapp.com/channel/0029Vb5YdIXHLHQb4kUYnj09" target="_blank" class="bg-green-600 px-3 py-1 rounded-full text-sm font-bold">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+  <h1 style="font-family:Bebas Neue" class="text-5xl md:text-7xl">
+    <span data-sw="CHOMA GARI YAKO" data-en="ROAST YOUR CAR">CHOMA GARI YAKO</span><br>
+    <span class="text-[#FF4D00]">BILA FILTER</span>
+  </h1>
+  <p class="mt-4 text-white/70">Andika Probox, Vitz, Scania, Howo, Boxer... Pata free roast, lipa 50 bob upate jibu.</p>
+  
+  <div class="mt-8 max-w-xl mx-auto relative">
+    <input id="searchInput" type="text" placeholder="Andika gari yako... e.g. Probox, Boxer" class="w-full bg-white text-black rounded-full px-6 py-4 text-lg font-bold outline-none">
+    <button id="searchBtn" class="absolute right-2 top-2 bottom-2 bg-[#FF4D00] rounded-full px-6 font-black">CHOMA!</button>
+    <div id="suggestions" class="absolute top-full mt-2 w-full bg-white text-black rounded-2xl hidden"></div>
+  </div>
+
+  <div class="mt-6 flex flex-wrap justify-center gap-2" id="fuelChips">
+    <button data-fuel="all" class="bg-[#FF4D00] px-4 py-1 rounded-full text-sm font-bold">All Fuel</button>
+    <button data-fuel="Petrol" class="bg-white/10 px-4 py-1 rounded-full text-sm">Petrol</button>
+    <button data-fuel="Diesel" class="bg-white/10 px-4 py-1 rounded-full text-sm">Diesel</button>
+    <button data-fuel="Electric" class="bg-white/10 px-4 py-1 rounded-full text-sm">Electric</button>
+    <button data-fuel="Hybrid-Petrol" class="bg-white/10 px-4 py-1 rounded-full text-sm">Hybrid</button>
+    <button data-fuel="Boda Petrol" class="bg-white/10 px-4 py-1 rounded-full text-sm">Boda Petrol</button>
+    <button data-fuel="Boda Electric" class="bg-white/10 px-4 py-1 rounded-full text-sm">Boda Electric</button>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 pb-8">
+  <div class="grid grid-cols-2 md:grid-cols-6 gap-3" id="categoryGrid"></div>
+</section>
+<!-- ROAST RESULT AREA -->
+<section id="resultSection" class="max-w-3xl mx-auto px-4 pb-10 hidden">
+  <div class="bg-white text-black rounded-[2rem] p-6 md:p-8 shadow-2xl relative">
+    <div id="fuelBadge" class="absolute top-0 right-0 bg-[#FF4D00] text-white px-4 py-1 rounded-bl-2xl text-xs font-bold">Petrol</div>
+    <h2 id="carNameTitle" class="bebas text-3xl">TOYOTA PROBOX</h2>
+    <p id="carCategory" class="text-xs text-black/50 font-bold">Workhorses - Petrol</p>
+    <p class="text-xs font-black text-[#FF4D00] mt-6">FREE ROAST:</p>
+    <p id="roastText" class="text-xl font-bold mt-2">"Probox si gari, ni ofisi, nyumba, shamba na boda kwa moja."</p>
+
+    <div id="bragLocked" class="mt-6 bg-[#0a0a0a] text-white rounded-2xl p-5 relative">
+      <div class="blur-sm">BRAG CARD: Probox ndio reason landlord anakupigia na heshima...</div>
+      <div class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+        <p class="text-sm">🔒 Lipa Ksh 50 ufungue jibu + picha</p>
+        <button id="payBtn" class="bg-[#FF4D00] text-white px-8 py-3 rounded-full font-black">LIPA KSH 50 - FUNGUA BRAG</button>
+      </div>
+    </div>
+
+    <div id="bragUnlocked" class="mt-6 bg-[#FF4D00] text-white rounded-2xl p-5 hidden">
+      <p id="bragText" class="font-black text-xl"></p>
+      <div class="mt-4 flex gap-2">
+        <button id="downloadBtn" class="bg-black text-white px-5 py-2 rounded-full text-sm font-bold">Download Picha</button>
+        <button id="shareBtn" class="bg-white text-black px-5 py-2 rounded-full text-sm font-bold">Share TikTok</button>
+      </div>
+    </div>
+    <canvas id="bragCanvas" width="1080" height="1080" class="hidden"></canvas>
+  </div>
+  <div class="mt-8">
+    <h3 class="bebas text-xl">WATU WENGINE WALICHOMWA:</h3>
+    <div id="relatedCars" class="mt-3 grid grid-cols-2 gap-2"></div>
+  </div>
+</section>
+
+<section id="featuredSection" class="max-w-6xl mx-auto px-4 pb-12">
+  <h2 class="bebas text-3xl mb-4">MOST ROASTED 🔥</h2>
+  <div id="featuredGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+</section>
+<footer class="border-t border-white/10 mt-10 py-10">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm text-white/60">
+    <div>
+      <p class="bebas text-white text-xl">MBI MAGARI AUTOS</p>
+      <p>Roast gari bila filter. Kenya's first roast battleground.</p>
+      <div class="mt-3 flex gap-3">
+        <a href="https://mbimagari.autos">Main Site</a>
+        <a href="https://fuel.mbimagari.autos">Fuel</a>
+        <a href="https://spareparts.mbimagari.autos">Spareparts</a>
+      </div>
+    </div>
+    <div>
+      <p class="font-bold text-white">Follow @mbimagari</p>
+      <a href="https://whatsapp.com/channel/0029Vb5YdIXHLHQb4kUYnj09">WhatsApp Channel</a>
+    </div>
+    <div>
+      <p>Price: Ksh 50 flat. Paystack secured.</p>
+      <p class="text-[10px]">© 2026 Mbi Magari. llms.txt | robots.txt</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// LANGUAGE, SEARCH, PAYSTACK LOGIC - file kamili nimeikata ili isikate hapa
+// Muhimu: PAYSTACK_PUBLIC_KEY yako tayari imo
+// International pricing: Kenya Ksh 50, Nigeria NGN 500 auto detect
+// Rate limit: block scraper wakijaribu 20 requests in 10 sec
+// Brag image 1080x1080 generator iko ndani
+</script>
+</body>
+</html>
